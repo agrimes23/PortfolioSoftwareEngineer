@@ -8,12 +8,12 @@ export default function Home() {
         {/* Intro */}
         <div className="">
           {/* name */}
-          <div className="text-[5rem]"> 
+          <div className="text-[5rem] text-primary font-bold"> 
             Alex Grimes
           </div>
 
           {/* pitch */}
-          <div className="text-[1.5rem]">
+          <div className="text-[1.5rem] text-secondary">
             <h2>A Software Engineer with experience in automating processes, web development, and speech-to-text.</h2>
           </div>
         </div>
