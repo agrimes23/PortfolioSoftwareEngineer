@@ -13,9 +13,6 @@ const Navbar = () => {
       <div className="flex w-full">
         <ul className="flex flex-row gap-10 justify-end w-full">
           <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
             <Link href="/projects">Projects</Link>
           </li>
           <li>

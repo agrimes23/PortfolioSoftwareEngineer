@@ -11,12 +11,12 @@ const config: Config = {
       colors: {
         primary:  {
           light: '#b88dfc',
-          DEFAULT: '#94ffef',  // ✅ UPDATED
+          DEFAULT: '#70e1f4', // ✅ UPDATED
           dark: '#853cfa',
         },
         secondary: {
           light: '#A3BFFA',
-          DEFAULT: '#ffffff',  // Primary color
+          DEFAULT: '#94ffef',  // Primary color
           dark: '#1E40AF',
         },
         accent:  {
@@ -49,6 +49,9 @@ const config: Config = {
           DEFAULT: '#EF4444',  // Error color
           dark: '#991B1B',
         }, 
+      },
+      boxShadow: {
+        'inner-outer': 'inset 0 0px 8px rgba(45, 47, 54, 1)',
       }
     },
   },

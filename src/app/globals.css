@@ -13,4 +13,12 @@ body {
       radial-gradient(circle at 10% 90%, rgba(255, 255, 0, 0.2) 0%, transparent 50%);
     background-size: cover;
     background-blend-mode: overlay;
-  }
+}
+
+.gradient-border {
+    border-image: linear-gradient(45deg, #64b5f6, #81c784);
+    border-image-slice: 1;
+    border-radius: 5px;
+    background: #35374B;
+}
+  

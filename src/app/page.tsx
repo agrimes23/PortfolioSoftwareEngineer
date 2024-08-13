@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       {/* Hero Section */}
-      <div className="">
+      <div className="bg-[#35374B] rounded-lg h-[70vh] w-[60vw] flex flex-col items-center">
+        <div className="w-[40vw] flex flex-col h-full justify-center gap-24">
         {/* Intro */}
         <div className="">
           {/* name */}
@@ -20,14 +21,15 @@ export default function Home() {
 
         {/* button container */}
         <div className="flex flex-col gap-6">
-          <h4 className="text-[1rem]">Learn More About Me</h4>
+          <h4 className="text-[1rem] text-white">Learn More About Me</h4>
           {/* buttons */}
           <div className="flex gap-8">
 
-            <button className="py-3 w-[11rem] bg-green-300 rounded-lg">Github Code</button>
-            <button className="py-3 w-[11rem] bg-purple-300 rounded-lg">LinkedIn</button>
-            <button className="py-3 w-[11rem] bg-blue-300 rounded-lg">Projects</button>
+            <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">Github Code</button>
+            <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">LinkedIn</button>
+            <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">Projects</button>
           </div>
+        </div>
         </div>
       </div>
 
