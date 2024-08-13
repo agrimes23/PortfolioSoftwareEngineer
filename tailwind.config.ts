@@ -21,13 +21,18 @@ const config: Config = {
         },
         accent:  {
           light: '#A3BFFA',
-          DEFAULT: '#3B82F6',  // Primary color
+          DEFAULT: '#ffffff',  // Primary color
           dark: '#1E40AF',
         },
         neutral:  {
           light: '#626363',
           DEFAULT: '#35374B',  // ✅ UPDATED
           dark: '#242424',
+        },
+        neutralSecondary: {
+          light: '#484b66',
+          DEFAULT: "#35374B",
+          dark: '#272938'
         },
         info: {
           light: '#BFDBFE',

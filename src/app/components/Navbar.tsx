@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex flex-row w-full justify-between py-5 px-10 shadow-lg">
+    <div className="flex flex-row w-full justify-between py-5 px-10 shadow-lg text-accent">
       {/* LOGO */}
       <div className="w-2/12">
       <Link href="/">Alex Grimes</Link>
