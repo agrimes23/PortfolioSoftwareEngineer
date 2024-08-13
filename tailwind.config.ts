@@ -52,7 +52,10 @@ const config: Config = {
       },
       boxShadow: {
         'inner-outer': 'inset 0 0px 8px rgba(45, 47, 54, 1)',
-      }
+      },
+      flexGrow: {
+        '2': '2', // Custom value for flex-grow
+      },
     },
   },
   plugins: [],
