@@ -66,7 +66,6 @@ export default function Home() {
                 <div className="flex-1 justify-end">
                   <p className="text-white pr-10">Tech</p>
                 </div>
-
               </div>
               <div className="flex items-center h-[10rem] rounded-lg bg-gray-800">
                 <div className="flex flex-1 flex-col pl-10">
@@ -79,7 +78,6 @@ export default function Home() {
                 <div className="flex-1 justify-end">
                   <p className="text-white pr-10">Tech</p>
                 </div>
-
               </div>
               <div className="flex items-center h-[10rem] rounded-lg bg-gray-800">
                 <div className="flex flex-1 flex-col pl-10">
@@ -92,11 +90,7 @@ export default function Home() {
                 <div className="flex-1 justify-end">
                   <p className="text-white pr-10">Tech</p>
                 </div>
-
               </div>
-
-
-
             </div>
             {/* view all projects button */}
             <div className="flex w-[90%] pb-10 justify-center">
@@ -111,7 +105,27 @@ export default function Home() {
       {/* Career */}
 
       <div className="h-[100vh]">
-        <div className="bg-[#35374B] rounded-lg h-[70vh] w-[60vw] flex flex-col items-center"></div>
+        <div className="bg-[#35374B] rounded-lg h-[70vh] w-[60vw] flex flex-col">
+          <div className="flex justify-center">
+            <p className="text-white text-[3rem] pt-10">Work Experience</p>
+          </div>
+          {/* Timeline line */}
+          <div className="relative h-full pt-10 pl-20 flex flex-col">
+            {/* line */}
+            <div className="relative bg-gray-500 h-[90%] w-[2px] rounded-lg">
+              {/* Dots container */}
+              <div className="absolute top-0 bottom-0 flex flex-col justify-between w-full">
+                {/* dot */}
+                <div className="absolute -left-2 rounded-full bg-purple-300 w-4 h-4" style={{ top: '10%' }}></div>
+                {/* dot */}
+                <div className="absolute -left-2 rounded-full bg-purple-300 w-4 h-4" style={{ top: '50%' }}></div>
+                {/* dot */}
+                <div className="absolute -left-2 rounded-full bg-purple-300 w-4 h-4" style={{ top: '90%' }}></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
 
       {/* Contact */}
