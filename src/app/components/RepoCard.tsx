@@ -1,9 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { FaGithub } from "react-icons/fa6";
+import { FaUpRightFromSquare } from "react-icons/fa6";
 
 interface RepoCardProps {
   username: string;
   repoName: string;
+  description?: string;
 }
 
 interface Repo {
@@ -11,10 +15,13 @@ interface Repo {
   name: string;
   description: string | null;
   created_at: string;
+  pushed_at: string;
   language: string | null;
+  homepage: string | null;
+  html_url: string | null;
 }
 
-const RepoCard: React.FC<RepoCardProps> = ({ username, repoName }) => {
+const RepoCard: React.FC<RepoCardProps> = ({ username, repoName, description }) => {
   const [repo, setRepo] = useState<Repo | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -45,9 +52,29 @@ const RepoCard: React.FC<RepoCardProps> = ({ username, repoName }) => {
   return (
     <div className="p-4 border-b border-neutralSecondary-dark w-full">
       <h3 className="text-xl font-bold">{repo?.name}</h3>
-      <p>{repo?.description || 'No description available'}</p>
+      <p>{repo?.description || description }</p>
       <p>Date created: {repo ? new Date(repo.created_at).toLocaleDateString() : 'N/A'}</p>
-      <p>Language: {repo?.language || 'Not specified'}</p>
+      <p>Last updated: {repo ? new Date(repo.pushed_at).toLocaleDateString() : 'N/A'}</p>
+      <div className="flex gap-3">
+        <a
+        href={repo?.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
+        >
+            <FaGithub className="text-2xl "/>
+            <p>Code</p>
+        </a>
+        <a
+        href={repo?.homepage}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
+        >
+            <FaUpRightFromSquare className="text-xl "/>
+            <p>Website</p>
+        </a>
+      </div>
     </div>
   );
 };
