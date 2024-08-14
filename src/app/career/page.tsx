@@ -2,7 +2,18 @@ import React from 'react'
 
 const Career = () => {
   return (
-    <div>Career</div>
+    <div>
+      <div>
+        <div>
+          <h2>Work Experience</h2>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
   )
 }
 
