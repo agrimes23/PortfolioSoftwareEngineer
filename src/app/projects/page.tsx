@@ -1,19 +1,5 @@
-"use client"
-import React, { useEffect, useState } from 'react';
-
-interface Repo {
-  id: number;
-  name: string;
-  description: string | null;
-  created_at: string;
-  language: string | null;
-}
-
-const Projects: React.FC = () => {
-  const [repos, setRepos] = useState<Repo[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
+import React from 'react';
+import RepoCard from '../components/RepoCard';
 
   // TODO:
   // make component to render cards for each repo given
@@ -33,28 +19,13 @@ const Projects: React.FC = () => {
   // my contributions amount (separate api call)
   // languages (separate api call) (maybe make a bar like github does?)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`/api`);
-        if (!response.ok) {
-          throw new Error(`GitHub API returned status ${response.status}`);
-        }
-        const data: Repo[] = await response.json();
-        setRepos(data);
-        console.log("api key maybe: " + process.env.NEXT_PUBLIC_GITHUB_USERNAME)
-      } catch (error: any) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  
 
-    fetchData();
-  }, []);
+const Projects: React.FC = () => {
+  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME as string;
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  // Array of repo names you want to display
+  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy"}, {username: "Noordibou", repoName: "Feeling-Friends"}];
 
   return (
     <div className="flex flex-col min-h-screen items-center">
@@ -63,20 +34,14 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Project list container */}
-      <div>
-        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-20 my-32 w-[60vw] flex flex-col items-center">
-          {repos.map(repo => (
-            <div key={repo.id} className="p-4 border-b border-neutralSecondary-dark w-full">
-              <h3 className="text-xl font-bold">{repo.name}</h3>
-              <p>{repo.description || 'No description available'}</p>
-              <p>Date created: {new Date(repo.created_at).toLocaleDateString()}</p>
-              <p>Language: {repo.language || 'Not specified'}</p>
-            </div>
-          ))}
-        </div>
+      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-20 my-32 w-[60vw] flex flex-col items-center">
+        {repo.map((repo) => (
+          <RepoCard key={repo.repoName} username={repo.username} repoName={repo.repoName} />
+        ))}
       </div>
     </div>
   );
 };
 
 export default Projects;
+

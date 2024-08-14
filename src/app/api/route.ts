@@ -1,10 +1,19 @@
 import { NextResponse } from 'next/server';
 
-const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const username = searchParams.get('username')
+  const repoName = searchParams.get('repoName');
 
-export async function GET() {
+  console.log("username: " + JSON.stringify(username))
+  console.log("username: " + JSON.stringify(repoName))
+
+  if (!repoName) {
+    return NextResponse.json({ error: 'Repo name is required' }, { status: 400 });
+  }
+
   try {
-    const response = await fetch(`https://api.github.com/users/${username}/repos`);
+    const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
     if (!response.ok) {
       return NextResponse.json({ error: `GitHub API returned status ${response.status}` }, { status: response.status });
     }
