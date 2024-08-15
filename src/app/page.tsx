@@ -33,17 +33,22 @@ export default function Home() {
                   href="https://github.com/agrimes23"
                   target="_blank"
                   rel="noopener noreferrer"
-                
-                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
-                    Github Code
-                  </a>
-                <a href="https://www.linkedin.com/in/alex-grimes-dev/"
+                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                >
+                  Github Code
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/alex-grimes-dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
+                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                >
                   LinkedIn
                 </a>
-                <Link href="/projects" className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
+                <Link
+                  href="/projects"
+                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                >
                   Projects
                 </Link>
               </div>
@@ -57,78 +62,84 @@ export default function Home() {
       {/* Experience */}
 
       <div className="flex my-10">
-  <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[90vw] xl:w-[60vw] flex flex-col p-10">
-    <div className="flex justify-center mb-10">
-      <p className="text-white text-[3rem]">Work Experience</p>
-    </div>
-    {/* Container for timeline and content */}
-    <div className="relative flex flex-col items-start">
-      {/* Timeline Line */}
-      <div className="relative flex items-start">
-        {/* Line */}
-        <div className="relative bg-gray-500 w-[2px] rounded-lg h-full min-h-[200px]">
-          {/* Dots container */}
-          <div className="absolute top-0 bottom-0 flex flex-col justify-between w-full">
-            {/* Dot */}
-            <div className="absolute -left-2 top-[12%] rounded-full bg-purple-300 w-4 h-4"></div>
-            {/* Dot */}
-            <div className="absolute -left-2 top-[45%] rounded-full bg-purple-300 w-4 h-4"></div>
-            {/* Dot */}
-            <div className="absolute -left-2 top-[80%] rounded-full bg-purple-300 w-4 h-4"></div>
+        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[90vw] xl:w-[60vw] flex flex-col p-10">
+          <div className="flex justify-center mb-10">
+            <p className="text-white text-[3rem]">Work Experience</p>
           </div>
-        </div>
+          {/* Container for timeline and content */}
+          <div className="relative flex flex-col items-start">
+            {/* Timeline Line */}
+            <div className="relative flex items-start">
+              {/* Line */}
+              <div className="relative bg-gray-500 w-[2px] rounded-lg h-full min-h-[200px]">
+                {/* Dots container */}
+                <div className="absolute top-0 bottom-0 flex flex-col justify-between w-full">
+                  {/* Dot */}
+                  <div className="absolute -left-2 top-[12%] rounded-full bg-purple-300 w-4 h-4"></div>
+                  {/* Dot */}
+                  <div className="absolute -left-2 top-[45%] rounded-full bg-purple-300 w-4 h-4"></div>
+                  {/* Dot */}
+                  <div className="absolute -left-2 top-[80%] rounded-full bg-purple-300 w-4 h-4"></div>
+                </div>
+              </div>
 
-        {/* Experience Entries */}
-        <div className="flex flex-col gap-12 pl-10">
-          <div className="relative flex flex-col gap-2 text-accent">
-            <div>
-              <h4 className="text-[1.2rem]">IT Junior Software Engineer</h4>
-              <h6 className="italic text-[0.9rem]">ASC Brands</h6>
-            </div>
-            <p>
-              Automated processes including sentiment analysis for customer service calls, website performance testing for lower performing web pages.
-            </p>
-          </div>
+              {/* Experience Entries */}
+              <div className="flex flex-col gap-12 pl-10">
+                <div className="relative flex flex-col gap-2 text-accent">
+                  <div>
+                    <h4 className="text-[1.2rem]">
+                      IT Junior Software Engineer
+                    </h4>
+                    <h6 className="italic text-[0.9rem]">ASC Brands</h6>
+                  </div>
+                  <p>
+                    Automated processes including sentiment analysis for
+                    customer service calls, website performance testing for
+                    lower performing web pages.
+                  </p>
+                </div>
 
-          <div className="relative flex flex-col gap-2 text-accent">
-            <div>
-              <h4 className="text-[1.2rem]">Accountant</h4>
-              <h6 className="italic text-[0.9rem]">UACJ North America</h6>
-            </div>
-            <p>
-              Managed financial initiatives across North America, communicated with Japanese banks, streamlined processes through Power Automate.
-            </p>
-          </div>
+                <div className="relative flex flex-col gap-2 text-accent">
+                  <div>
+                    <h4 className="text-[1.2rem]">Accountant</h4>
+                    <h6 className="italic text-[0.9rem]">UACJ North America</h6>
+                  </div>
+                  <p>
+                    Managed financial initiatives across North America,
+                    communicated with Japanese banks, streamlined processes
+                    through Power Automate.
+                  </p>
+                </div>
 
-          <div className="relative flex flex-col gap-2 text-accent">
-            <div>
-              <h4 className="text-[1.2rem]">Assistant Language Teacher at the JET Program</h4>
-              <h6 className="italic text-[0.9rem]">Fukui Board of Education</h6>
+                <div className="relative flex flex-col gap-2 text-accent">
+                  <div>
+                    <h4 className="text-[1.2rem]">
+                      Assistant Language Teacher at the JET Program
+                    </h4>
+                    <h6 className="italic text-[0.9rem]">
+                      Fukui Board of Education
+                    </h6>
+                  </div>
+                  <p>
+                    Collaborated with Japanese English teachers to develop
+                    engaging English learning activities for 450 middle school
+                    students.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p>
-              Collaborated with Japanese English teachers to develop engaging English learning activities for 450 middle school students.
-            </p>
+
+            {/* View All Projects Button */}
+            <div className="flex w-full py-8 justify-center">
+              <Link href="/experience">
+                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+                  View All Work Experience
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* View All Projects Button */}
-      <div className="flex w-full py-8 justify-center">
-        <Link href="/experience">
-          <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-            View All Work Experience
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
     </main>
   );
 }
