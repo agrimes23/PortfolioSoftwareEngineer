@@ -61,21 +61,21 @@ const ProjectsHome = () => {
     fetchRepoInfo();
   }, []);
   return (
-    <div className="h-[100vh]">
-      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg sm:h-[90vh] xl:h-[70vh] w-[90vw] xl:w-[60vw] flex items-center flex-col xl:flex-row">
+    <div className="flex">
+      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[90vw] xl:w-[60vw] flex items-center flex-col xl:flex-row">
         {/* Title ("Recent Projects")*/}
         <div className="w-full xl:h-full my-5 xl:my-0 xl:w-4/12 pt-10 pl-10 text-[3rem] text-white">
           <h1>Recent Projects</h1>
         </div>
 
         {/* Recent Projects list */}
-        <div className="flex flex-col xl:w-8/12 h-full justify-between items-center">
+        <div className="flex flex-col xl:w-8/12 h-full justify-between items-center xl:my-24">
           {/* the list */}
           <div className="flex flex-col gap-8 justify-center h-full w-[90%] max-w-[900px]">
             {repoInfo.map((repo, index) => (
               <div
                 key={index}
-                className="flex items-center lg:h-[10rem] rounded-lg bg-gray-800 p-5 flex-col sm:flex-row"
+                className="flex items-center rounded-lg bg-gray-800 p-5 flex-col sm:flex-row"
               >
                 <div className="flex flex-col flex-1 h-full gap-4">
                   <p className="text-white text-[1.3rem]">{repo.name}</p>
