@@ -11,7 +11,7 @@ import RepoCard from '../components/RepoCard';
 
 const Projects: React.FC = () => {
   // list of specific repos to display
-  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy"}, {username: "Noordibou", repoName: "Feeling-Friends", description: "manual description"}];
+  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy"}, {username: "Noordibou", repoName: "Feeling-Friends", description: "manual description"}, {username: "agrimes23", repoName: "travel_plan_backend"}];
 
   return (
     <div className="flex flex-col min-h-screen items-center">
@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Project list container */}
-      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-20 my-32 w-[60vw] flex flex-col items-center">
+      <div className="flex flex-wrap gap-10">
         {repo.map((repo) => (
           <RepoCard key={repo.repoName} username={repo.username} repoName={repo.repoName} description={repo.description} />
         ))}
