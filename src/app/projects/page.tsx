@@ -1,13 +1,6 @@
 import React from 'react';
 import RepoCard from '../components/RepoCard';
 
-  // TODO:
-  
-  // // SEPARATE API CALLS
-  // my contributions amount (separate api call)
-  // languages (separate api call) (maybe make a bar like github does?)
-
-  
 
 const Projects: React.FC = () => {
   // list of specific repos to display

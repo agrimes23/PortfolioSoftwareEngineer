@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProjectsHome from "./components/ProjectsHome";
 
 export default function Home() {
   return (
@@ -43,64 +44,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Projects */}
-      <div className="h-[100vh]">
-        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex items-center">
-          {/* Title ("Recent Projects")*/}
-          <div className="w-4/12 h-full pt-10 pl-20 text-[3rem] text-white">
-            <h1>Recent Projects</h1>
-          </div>
-
-          {/* Recent Projects list */}
-          <div className="flex flex-col w-8/12 h-full justify-between">
-            {/* the list */}
-            <div className="flex flex-col gap-8 justify-center h-full w-[90%] max-w-[900px]">
-              <div className="flex items-center h-[10rem] rounded-lg bg-gray-800">
-                <div className="flex flex-1 flex-col pl-10">
-                  <p className="text-white">(Project Name)</p>
-                  <p className="text-white">Last worked on: (Date)</p>
-                </div>
-                <div className="flex-grow-2">
-                  <p className="text-white">Description</p>
-                </div>
-                <div className="flex-1 justify-end">
-                  <p className="text-white pr-10">Tech</p>
-                </div>
-              </div>
-              <div className="flex items-center h-[10rem] rounded-lg bg-gray-800">
-                <div className="flex flex-1 flex-col pl-10">
-                  <p className="text-white">(Project Name)</p>
-                  <p className="text-white">Last worked on: (Date)</p>
-                </div>
-                <div className="flex-grow-2">
-                  <p className="text-white">Description</p>
-                </div>
-                <div className="flex-1 justify-end">
-                  <p className="text-white pr-10">Tech</p>
-                </div>
-              </div>
-              <div className="flex items-center h-[10rem] rounded-lg bg-gray-800">
-                <div className="flex flex-1 flex-col pl-10">
-                  <p className="text-white">(Project Name)</p>
-                  <p className="text-white">Last worked on: (Date)</p>
-                </div>
-                <div className="flex-grow-2">
-                  <p className="text-white">Description</p>
-                </div>
-                <div className="flex-1 justify-end">
-                  <p className="text-white pr-10">Tech</p>
-                </div>
-              </div>
-            </div>
-            {/* view all projects button */}
-            <div className="flex w-[90%] pb-10 justify-center">
-              <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-                View All Projects
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProjectsHome />
 
       {/* Career */}
 
