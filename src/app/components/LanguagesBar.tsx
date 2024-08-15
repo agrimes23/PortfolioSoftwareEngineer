@@ -5,11 +5,12 @@ interface LanguageBarProps {
 }
 
 const languageColors: Record<string, string> = {
-    TypeScript: 'bg-purple-400',
+    TypeScript: 'bg-blue-400',
     JavaScript: 'bg-yellow-400',
-    CSS: 'bg-blue-400',
+    CSS: 'bg-purple-400',
     HTML: 'bg-red-400',
-    // Add more languages and colors as needed
+    Java: 'bg-orange-400',
+    'C#': 'bg-green-400'
   };
   
 
