@@ -5,19 +5,19 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-24">
-      <div className="h-[100vh]">
+      <div className="h-[100vh] my-10">
         {/* Hero Section */}
-        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex flex-col items-center">
-          <div className="w-[40vw] flex flex-col h-full justify-center gap-24">
+        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-32 lg:py-0 lg:h-[70vh] w-[90vw] xl:w-[60vw] flex flex-col items-center">
+          <div className="w-[80vw] xl:w-[40vw] flex flex-col h-full justify-center gap-24">
             {/* Intro */}
             <div className="">
               {/* name */}
-              <div className="text-[5rem] text-primary font-bold">
+              <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] text-primary font-bold">
                 Alex Grimes
               </div>
 
               {/* pitch */}
-              <div className="text-[1.5rem] text-secondary">
+              <div className="text-[1.2rem] md:text-[1.5rem] text-secondary">
                 <h2>
                   A Software Engineer with experience in automating processes,
                   web development, and speech-to-text.
@@ -27,9 +27,8 @@ export default function Home() {
 
             {/* button container */}
             <div className="flex flex-col gap-6">
-              <h4 className="text-[1rem] text-white">Learn More About Me</h4>
               {/* buttons */}
-              <div className="flex gap-8">
+              <div className="flex gap-8 flex-wrap justify-center">
                 <a
                   href="https://github.com/agrimes23"
                   target="_blank"
