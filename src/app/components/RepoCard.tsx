@@ -82,7 +82,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg px-8 py-20 my-32 flex flex-col ">
+    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg px-8 py-20 my-32 flex flex-col text-accent">
       <h3 className="text-xl font-bold">{repo?.name}</h3>
       <p>{repo?.description || description}</p>
       <p>
@@ -93,7 +93,6 @@ const RepoCard: React.FC<RepoCardProps> = ({
         Last updated:{" "}
         {repo ? new Date(repo.pushed_at).toLocaleDateString() : "N/A"}
       </p>
-      <p>Languages: {languages.CSS}</p>
       <div className="flex gap-3">
         <a
           href={repo?.html_url}
