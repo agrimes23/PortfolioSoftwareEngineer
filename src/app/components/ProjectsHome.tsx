@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import HomeLanguagesBar from "./HomeLanguagesBar";
+import LanguagesBar from "./LanguagesBar";
 
 interface Languages {
   [key: string]: number;
@@ -86,7 +86,7 @@ const ProjectsHome = () => {
                       {new Date(repo.pushed_at).toLocaleDateString()}
                     </span>
                   </p>
-                  <HomeLanguagesBar languages={repo.languages} />
+                  <LanguagesBar languages={repo.languages} />
                 </div>
               </div>
             ))}

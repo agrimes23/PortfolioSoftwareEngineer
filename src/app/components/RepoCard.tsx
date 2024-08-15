@@ -74,7 +74,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
         setLoading(false);
       }
     };
-    console.log("languages: " + JSON.stringify(languages))
+
     fetchData();
   }, [username, repoName]);
 
@@ -82,18 +82,24 @@ const RepoCard: React.FC<RepoCardProps> = ({
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg px-8 py-20 my-32 flex flex-col text-accent">
-      <h3 className="text-xl font-bold">{repo?.name}</h3>
-      <p>{repo?.description || description}</p>
-      <p>
-        Date created:{" "}
-        {repo ? new Date(repo.created_at).toLocaleDateString() : "N/A"}
-      </p>
-      <p>
-        Last updated:{" "}
-        {repo ? new Date(repo.pushed_at).toLocaleDateString() : "N/A"}
-      </p>
-      <div className="flex gap-3">
+    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg px-8 my-32 flex flex-col text-accent w-[30%] min-h-[300px] py-5">
+      <div>
+        <h3 className="text-xl font-bold">{repo?.name}</h3>
+        <div className="flex text-[0.8rem] text-gray-400 pb-2 gap-10">
+          <p className="flex flex-col">
+            Date created{" "}
+            <span>
+            {repo ? new Date(repo.created_at).toLocaleDateString() : "N/A"}</span>
+          </p>
+          <p className="flex flex-col">
+            Last updated{" "}
+            <span>
+            {repo ? new Date(repo.pushed_at).toLocaleDateString() : "N/A"}</span>
+          </p>
+        </div>
+        <p>{repo?.description || description}</p>
+      </div>
+      <div className="flex gap-3 py-4">
         <a
           href={repo?.html_url}
           target="_blank"
@@ -113,6 +119,8 @@ const RepoCard: React.FC<RepoCardProps> = ({
           <p>Website</p>
         </a>
       </div>
+
+
       <LanguagesBar languages={languages}/>
     </div>
   );
