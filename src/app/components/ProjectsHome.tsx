@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import LanguagesBar from "./LanguagesBar";
+import Link from "next/link";
 
 interface Languages {
   [key: string]: number;
@@ -93,9 +94,11 @@ const ProjectsHome = () => {
           </div>
           {/* view all projects button */}
           <div className="flex w-[90%] pb-10 justify-center">
-            <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-              View All Projects
-            </button>
+            <Link href="/projects">
+              <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+                View All Projects
+              </button>
+            </Link>
           </div>
         </div>
       </div>

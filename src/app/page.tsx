@@ -55,7 +55,7 @@ export default function Home() {
 
       <ProjectsHome />
 
-      {/* Career */}
+      {/* Experience */}
 
       <div className="h-[100vh]">
         <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex flex-col">
@@ -113,9 +113,11 @@ export default function Home() {
             </div>
             {/* view all projects button */}
             <div className="flex w-[90%] py-8 justify-center">
-              <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-                View All Work Experience
-              </button>
+              <Link href="/experience">
+                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+                  View All Work Experience
+                </button>
+              </Link>
             </div>
           </div>
         </div>

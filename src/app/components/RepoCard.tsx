@@ -85,7 +85,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg my-32 flex flex-col text-accent w-[400px] min-h-[300px]">
+    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg mt-20 mb-32 flex flex-col text-accent w-[400px] min-h-[300px]">
       <div>
       <Image
         className="object-cover h-[300px]"
@@ -124,6 +124,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
           <FaGithub className="text-2xl " />
           <p>Code</p>
         </a>
+        {repo?.homepage && (
         <a
           href={repo?.homepage}
           target="_blank"
@@ -133,6 +134,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
           <FaUpRightFromSquare className="text-xl " />
           <p>Website</p>
         </a>
+        )}
       </div>
 
 

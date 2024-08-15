@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Career = () => {
+const Experience = () => {
   return (
     <div className="flex flex-col min-h-screen items-center">
       <div className="my-10">
@@ -87,4 +87,4 @@ const Career = () => {
   )
 }
 
-export default Career
+export default Experience
