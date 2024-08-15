@@ -1,9 +1,10 @@
 import Image from "next/image";
 import ProjectsHome from "./components/ProjectsHome";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex min-h-screen flex-col items-center pt-24">
       <div className="h-[100vh]">
         {/* Hero Section */}
         <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex flex-col items-center">
@@ -29,15 +30,23 @@ export default function Home() {
               <h4 className="text-[1rem] text-white">Learn More About Me</h4>
               {/* buttons */}
               <div className="flex gap-8">
-                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-                  Github Code
-                </button>
-                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+                <a
+                  href="https://github.com/agrimes23"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                
+                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
+                    Github Code
+                  </a>
+                <a href="https://www.linkedin.com/in/alex-grimes-dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
                   LinkedIn
-                </button>
-                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+                </a>
+                <Link href="/projects" className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center">
                   Projects
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -109,14 +118,6 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Contact */}
-
-      <div className="h-[100vh]">
-        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex flex-col items-center text-accent">
-          CONTACT
         </div>
       </div>
     </main>
