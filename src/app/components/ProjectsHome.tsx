@@ -14,14 +14,15 @@ interface RepoData {
 }
 
 const repoList: RepoData[] = [
-  { username: "agrimes23", repoName: "JLPTNewsStudy" },
+  { username: "agrimes23", repoName: "JLPTNewsStudy", description:
+    "Japanese Learners can learn from real news articles, and add new words directly from the news article to flashcard decks to study", },
   {
     username: "Noordibou",
     repoName: "Feeling-Friends",
     description:
-      "Manual description for repo2 asdf asdf asdsadf sdsad fasdf asd",
+        "an educational web application, enhancing communication and accessibility, and fostering a supportive environment for student engagement",
   },
-  { username: "agrimes23", repoName: "travel_plan_backend" },
+  { username: "agrimes23", repoName: "travel_plan_backend", description: "Handles logic for saving planned trips, with JWT authentication. Uses the Spring Boot framework", },
 ];
 
 const ProjectsHome = () => {
@@ -61,24 +62,24 @@ const ProjectsHome = () => {
   }, []);
   return (
     <div className="h-[100vh]">
-      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg h-[70vh] w-[60vw] flex items-center">
+      <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg sm:h-[90vh] xl:h-[70vh] w-[90vw] xl:w-[60vw] flex items-center flex-col xl:flex-row">
         {/* Title ("Recent Projects")*/}
-        <div className="w-4/12 h-full pt-10 pl-20 text-[3rem] text-white">
+        <div className="w-full xl:h-full my-5 xl:my-0 xl:w-4/12 pt-10 pl-10 text-[3rem] text-white">
           <h1>Recent Projects</h1>
         </div>
 
         {/* Recent Projects list */}
-        <div className="flex flex-col w-8/12 h-full justify-between">
+        <div className="flex flex-col xl:w-8/12 h-full justify-between items-center">
           {/* the list */}
           <div className="flex flex-col gap-8 justify-center h-full w-[90%] max-w-[900px]">
             {repoInfo.map((repo, index) => (
               <div
                 key={index}
-                className="flex items-center h-[10rem] rounded-lg bg-gray-800 p-5"
+                className="flex items-center lg:h-[10rem] rounded-lg bg-gray-800 p-5 flex-col sm:flex-row"
               >
                 <div className="flex flex-col flex-1 h-full gap-4">
                   <p className="text-white text-[1.3rem]">{repo.name}</p>
-                  <p className="text-white">{repo.manualDescription}</p>
+                  <p className="text-white text-[0.9rem] lg:text-[1rem]">{repo.manualDescription}</p>
                 </div>
                 <div className="flex flex-col flex-1 h-full justify-between px-4">
                   <p className="flex flex-col text-gray-400 text-right text-[0.8rem]">
@@ -93,9 +94,9 @@ const ProjectsHome = () => {
             ))}
           </div>
           {/* view all projects button */}
-          <div className="flex w-[90%] pb-10 justify-center">
+          <div className="flex w-[90%] h-[20%] justify-center items-center">
             <Link href="/projects">
-              <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+              <button className="my-10 sm:my-0 py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
                 View All Projects
               </button>
             </Link>
