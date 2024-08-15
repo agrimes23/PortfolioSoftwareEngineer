@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Project list container */}
-      <div className="flex flex-wrap gap-10">
+      <div className="flex flex-wrap gap-10 sm:px-20 justify-center">
         {repo.map((repo) => (
           <RepoCard key={repo.repoName} username={repo.username} repoName={repo.repoName} description={repo.description} image={repo.thumbnail} />
         ))}
