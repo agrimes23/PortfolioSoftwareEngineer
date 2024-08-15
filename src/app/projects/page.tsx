@@ -4,7 +4,28 @@ import RepoCard from '../components/RepoCard';
 
 const Projects: React.FC = () => {
   // list of specific repos to display
-  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy", thumbnail: "/images/JLPT_News_Study_thumbnail.PNG"}, {username: "Noordibou", repoName: "Feeling-Friends", description: "manual description", thumbnail: "/images/Feeling_Friends_thumbnail.PNG"}, {username: "agrimes23", repoName: "travel_plan_backend", thumbnail: "/images/Backend_Code_thumbnail.PNG"}];
+  const repo = [
+    {
+      username: "agrimes23",
+      repoName: "JLPTNewsStudy",
+      description:
+        "Japanese Learners can learn from real news articles, and add new words directly from the news article to flashcard decks to study",
+      thumbnail: "/images/JLPT_News_Study_thumbnail.PNG",
+    },
+    {
+      username: "Noordibou",
+      repoName: "Feeling-Friends",
+      description:
+        "an educational web application, enhancing communication and accessibility, and fostering a supportive environment for student engagement",
+      thumbnail: "/images/Feeling_Friends_thumbnail.PNG",
+    },
+    {
+      username: "agrimes23",
+      repoName: "travel_plan_backend",
+      description: "Handles logic for saving planned trips, with JWT authentication. Uses the Spring Boot framework",
+      thumbnail: "/images/Backend_Code_thumbnail.PNG",
+    },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen items-center">
