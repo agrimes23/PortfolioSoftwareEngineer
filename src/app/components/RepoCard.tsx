@@ -4,11 +4,13 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { FaUpRightFromSquare } from "react-icons/fa6";
 import LanguagesBar from "./LanguagesBar";
+import Image from 'next/image';
 
 interface RepoCardProps {
   username: string;
   repoName: string;
   description?: string;
+  image: string;
 }
 
 interface Repo {
@@ -30,6 +32,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
   username,
   repoName,
   description,
+  image
 }) => {
   const [repo, setRepo] = useState<Repo | null>(null);
   const [contributors, setContributors] = useState<Contributor[]>([]);
@@ -82,8 +85,20 @@ const RepoCard: React.FC<RepoCardProps> = ({
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg px-8 my-32 flex flex-col text-accent w-[30%] min-h-[300px] py-5">
+    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg my-32 flex flex-col text-accent w-[400px] min-h-[300px]">
       <div>
+      <Image
+        className="object-cover h-[300px]"
+        src={image}
+        alt="Thumbnail"
+        width={500}
+        height={400}
+      />
+    </div>
+    <div className="px-8 py-5">
+      
+      <div>
+      
         <h3 className="text-xl font-bold">{repo?.name}</h3>
         <div className="flex text-[0.8rem] text-gray-400 pb-2 gap-10">
           <p className="flex flex-col">
@@ -122,6 +137,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
 
 
       <LanguagesBar languages={languages}/>
+    </div>
     </div>
   );
 };

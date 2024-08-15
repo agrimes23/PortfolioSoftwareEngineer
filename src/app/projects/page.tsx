@@ -4,7 +4,7 @@ import RepoCard from '../components/RepoCard';
 
 const Projects: React.FC = () => {
   // list of specific repos to display
-  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy"}, {username: "Noordibou", repoName: "Feeling-Friends", description: "manual description"}, {username: "agrimes23", repoName: "travel_plan_backend"}];
+  const repo = [{username: "agrimes23", repoName: "JLPTNewsStudy", thumbnail: "/images/JLPT_News_Study_thumbnail.PNG"}, {username: "Noordibou", repoName: "Feeling-Friends", description: "manual description", thumbnail: "/images/Feeling_Friends_thumbnail.PNG"}, {username: "agrimes23", repoName: "travel_plan_backend", thumbnail: "/images/Backend_Code_thumbnail.PNG"}];
 
   return (
     <div className="flex flex-col min-h-screen items-center">
@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
       {/* Project list container */}
       <div className="flex flex-wrap gap-10">
         {repo.map((repo) => (
-          <RepoCard key={repo.repoName} username={repo.username} repoName={repo.repoName} description={repo.description} />
+          <RepoCard key={repo.repoName} username={repo.username} repoName={repo.repoName} description={repo.description} image={repo.thumbnail} />
         ))}
       </div>
     </div>
