@@ -56,7 +56,8 @@ const config: Config = {
         }, 
       },
       boxShadow: {
-        'inner-outer': 'inset 0 0px 8px rgba(45, 47, 54, 1)',
+        'white-glow': '0 4px 15px rgba(255, 255, 255, 0.8)',
+        'neon-blue': '0 4px 15px rgba(148, 255, 239, 1)', // Adjust the RGBA value for the desired neon effect
       },
       flexGrow: {
         '2': '2', // Custom value for flex-grow
