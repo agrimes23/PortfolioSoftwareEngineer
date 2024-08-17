@@ -4,13 +4,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center pt-24 gap-52">
-      <div className="my-10">
+    <main className="flex min-h-screen flex-col items-center pt-5 sm:pt-24 gap-52">
+      <div className="my-5 sm:my-10">
         {/* Hero Section */}
-        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-32 lg:py-0 lg:h-[70vh] w-[90vw] xl:w-[60vw] flex flex-col items-center">
-          <div className="w-[80vw] xl:w-[40vw] flex flex-col h-full justify-center gap-24">
+        <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg py-10 sm:py-32 lg:py-0 lg:h-[70vh] w-[90vw] xl:w-[60vw] flex flex-col items-center">
+          <div className="w-[80vw] xl:w-[40vw] flex flex-col h-full justify-center gap-10 sm:gap-24">
             {/* Intro */}
-            <div className="">
+            <div className="px-5">
               {/* name */}
               <div className="text-[3rem] sm:text-[4rem] md:text-[5rem] text-primary font-bold">
                 Alex Grimes
@@ -28,7 +28,7 @@ export default function Home() {
             {/* button container */}
             <div className="flex flex-col gap-6">
               {/* buttons */}
-              <div className="flex gap-8 flex-wrap justify-start">
+              <div className="flex gap-8 flex-wrap justify-center sm:justify-start">
                 <a
                   href="https://github.com/agrimes23"
                   target="_blank"
