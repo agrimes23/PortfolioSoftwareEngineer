@@ -85,7 +85,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg mt-20 mb-32 flex flex-col text-accent w-[300px] sm:w-[400px] min-h-[300px]">
+    <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg mt-20 mb-32 flex flex-col text-accent w-[300px] sm:w-[400px] min-h-[300px] shadow-2xl">
       <div>
       <Image
         className="object-cover h-[300px]"
