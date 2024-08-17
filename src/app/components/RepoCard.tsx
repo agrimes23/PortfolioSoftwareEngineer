@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { FaUpRightFromSquare } from "react-icons/fa6";
+import PlaceholderCard from "./PlaceholderCard";
 import LanguagesBar from "./LanguagesBar";
 import Image from 'next/image';
 
@@ -32,7 +33,7 @@ const RepoCard: React.FC<RepoCardProps> = ({
   username,
   repoName,
   description,
-  image
+  image,
 }) => {
   const [repo, setRepo] = useState<Repo | null>(null);
   const [contributors, setContributors] = useState<Contributor[]>([]);
@@ -81,65 +82,64 @@ const RepoCard: React.FC<RepoCardProps> = ({
     fetchData();
   }, [username, repoName]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <PlaceholderCard />;
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg mt-20 mb-32 flex flex-col text-accent w-[300px] sm:w-[400px] min-h-[300px] shadow-2xl">
       <div>
-      <Image
-        className="object-cover h-[300px]"
-        src={image}
-        alt="Thumbnail"
-        width={500}
-        height={400}
-      />
-    </div>
-    <div className="px-8 py-5">
-      
-      <div>
-      
-        <h3 className="text-xl font-bold">{repo?.name}</h3>
-        <div className="flex text-[0.8rem] text-gray-400 pb-2 gap-10">
-          <p className="flex flex-col">
-            Date created{" "}
-            <span>
-            {repo ? new Date(repo.created_at).toLocaleDateString() : "N/A"}</span>
-          </p>
-          <p className="flex flex-col">
-            Last updated{" "}
-            <span>
-            {repo ? new Date(repo.pushed_at).toLocaleDateString() : "N/A"}</span>
-          </p>
+        <Image
+          className="object-cover h-[300px] rounded-lg"
+          src={image}
+          alt="Thumbnail"
+          width={500}
+          height={400}
+        />
+      </div>
+      <div className="px-8 py-5">
+        <div>
+          <h3 className="text-xl font-bold">{repo?.name}</h3>
+          <div className="flex text-[0.8rem] text-gray-400 pb-2 gap-10">
+            <p className="flex flex-col">
+              Date created{" "}
+              <span>
+                {repo ? new Date(repo.created_at).toLocaleDateString() : "N/A"}
+              </span>
+            </p>
+            <p className="flex flex-col">
+              Last updated{" "}
+              <span>
+                {repo ? new Date(repo.pushed_at).toLocaleDateString() : "N/A"}
+              </span>
+            </p>
+          </div>
+          <p>{repo?.description || description}</p>
         </div>
-        <p>{repo?.description || description}</p>
-      </div>
-      <div className="flex gap-3 py-4">
-        <a
-          href={repo?.html_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
-        >
-          <FaGithub className="text-2xl " />
-          <p>Code</p>
-        </a>
-        {repo?.homepage && (
-        <a
-          href={repo?.homepage}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
-        >
-          <FaUpRightFromSquare className="text-xl " />
-          <p>Website</p>
-        </a>
-        )}
-      </div>
+        <div className="flex gap-3 py-4">
+          <a
+            href={repo?.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
+          >
+            <FaGithub className="text-2xl " />
+            <p>Code</p>
+          </a>
+          {repo?.homepage && (
+            <a
+              href={repo?.homepage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex bg-[#0c0c20] px-5 py-2 text-accent justify-center gap-3 items-center rounded-lg"
+            >
+              <FaUpRightFromSquare className="text-xl " />
+              <p>Website</p>
+            </a>
+          )}
+        </div>
 
-
-      <LanguagesBar languages={languages}/>
-    </div>
+        <LanguagesBar languages={languages} />
+      </div>
     </div>
   );
 };

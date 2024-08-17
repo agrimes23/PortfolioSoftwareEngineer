@@ -32,7 +32,9 @@ const config: Config = {
         neutralSecondary: {
           light: '#484b66',
           DEFAULT: "#35374B",
-          dark: '#272938'
+          dark: '#272938',
+          loadingLight: "#3E4054",
+          loadingDark: "#2E2F40"
         },
         info: {
           light: '#BFDBFE',
