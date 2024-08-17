@@ -27,6 +27,7 @@ const repoList: RepoData[] = [
 
 const ProjectsHome = () => {
   const [repoInfo, setRepoInfo] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -53,9 +54,10 @@ const ProjectsHome = () => {
           }
         }
       );
-
+      
       const repoData = await Promise.all(repoDataPromises);
       setRepoInfo(repoData.filter((data) => data !== null)); // Filter out any null responses
+      setLoading(false);
     };
 
     fetchRepoInfo();
@@ -69,29 +71,58 @@ const ProjectsHome = () => {
         </div>
 
         {/* Recent Projects list */}
-        <div className="flex flex-col xl:w-8/12 h-full justify-between items-center xl:my-24">
+        <div className="flex flex-col w-full xl:w-8/12 h-full justify-between items-center xl:my-24">
           {/* the list */}
           <div className="flex flex-col gap-8 justify-center h-full w-[90%] max-w-[900px]">
-            {repoInfo.map((repo, index) => (
-              <div
+            {loading
+              ? repoList.map((_, index) => (
+                <div
                 key={index}
-                className="flex items-center rounded-lg bg-gray-800 p-5 flex-col sm:flex-row"
+                className="flex sm:items-center rounded-lg bg-gray-800 p-5 flex-col sm:flex-row animate-pulse min-h-[150px] w-full"
               >
-                <div className="flex flex-col flex-1 h-full gap-4">
-                  <p className="text-white text-[1.3rem]">{repo.name}</p>
-                  <p className="text-white text-[0.9rem] lg:text-[1rem]">{repo.manualDescription}</p>
+                <div className="flex flex-col flex-1 gap-4">
+                  {/* project title */}
+                  <div className="bg-gray-500 h-[28px] w-[85%] rounded-lg"></div>
+                  {/* description */}
+                  <div>
+                    <div className="bg-gray-500 h-[15px] w-[85%] rounded-lg my-2"></div>
+                    <div className="bg-gray-500 h-[15px] w-[85%] rounded-lg"></div>
+                    <div className="bg-gray-500 h-[15px] w-[85%] rounded-lg my-2"></div>
+                  </div>
                 </div>
                 <div className="flex flex-col flex-1 h-full justify-between px-4">
-                  <p className="flex flex-col text-gray-400 text-right text-[0.8rem]">
-                    Last updated:{" "}
-                    <span className="text-[0.8rem]">
-                      {new Date(repo.pushed_at).toLocaleDateString()}
-                    </span>
-                  </p>
-                  <LanguagesBar languages={repo.languages} />
+                  <div className="bg-gray-600 w-[30%] h-[30px] self-end"></div>
+                  <div className="bg-gray-600 h-4 rounded mt-2 sm:mt-0"></div>
+                  <div className="flex flex-row justify-between my-2 sm:my-0">
+                    <div className="bg-gray-600 w-[30%] h-4 rounded"></div>
+                    <div className="bg-gray-600 w-[30%] h-4 rounded"></div>
+                    <div className="bg-gray-600 w-[30%] h-4 rounded"></div>
+                  </div>
                 </div>
               </div>
-            ))}
+                ))
+              : repoInfo.map((repo, index) => (
+                  <div
+                    key={index}
+                    className="flex sm:items-center rounded-lg bg-gray-800 p-5 flex-col sm:flex-row max-w-[800px]"
+                  >
+                    <div className="flex flex-col flex-1 h-full gap-4">
+                      <p className="text-white text-[1.3rem]">{repo.name}</p>
+                      <p className="text-white text-[0.9rem] lg:text-[1rem]">
+                        {repo.manualDescription}
+                      </p>
+                    </div>
+                    <div className="flex flex-col flex-1 h-full justify-between px-4 w-full">
+                      <p className="flex flex-col text-gray-400 text-right text-[0.8rem]">
+                        Last updated:{" "}
+                        <span className="text-[0.8rem]">
+                          {new Date(repo.pushed_at).toLocaleDateString()}
+                        </span>
+                      </p>
+                      <LanguagesBar languages={repo.languages} />
+                    </div>
+                  </div>
+                ))}
           </div>
           {/* view all projects button */}
           <div className="flex w-[90%] h-[20%] justify-center items-center">
