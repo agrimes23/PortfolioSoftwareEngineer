@@ -28,7 +28,7 @@ export default function Home() {
             {/* button container */}
             <div className="flex flex-col gap-6">
               {/* buttons */}
-              <div className="flex gap-8 flex-wrap justify-center">
+              <div className="flex gap-8 flex-wrap justify-start">
                 <a
                   href="https://github.com/agrimes23"
                   target="_blank"
@@ -45,12 +45,12 @@ export default function Home() {
                 >
                   LinkedIn
                 </a>
-                <Link
+                {/* <Link
                   href="/projects"
                   className="colorful-btn py-5 w-[11rem] border-2 gradient-border text-white text-center"
                 >
                   Projects
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
