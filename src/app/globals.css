@@ -55,8 +55,35 @@ body {
   border-radius: 10px;
 }
 
+
+/* for colorful text. Keeping here in case decide to use it */
+/* .colorful-text {
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    #00ffea, #33d6ff, #66b5ff, #99b9ff, 
+    #00ffff, #00a2ff, #0077ff, #00eeff
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowingText 5s linear infinite;
+} */
+
+
 @keyframes glowing {
   0% { background-position: 0 0; }
   50% { background-position: 100% 0; }
   100% { background-position: 0 0; }
 }
+
+
+/* for colorful text. Keeping here in case decide to use it */
+/* @keyframes glowingText {
+  0% { background-position: 0 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+} */
