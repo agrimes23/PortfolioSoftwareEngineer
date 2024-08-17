@@ -96,7 +96,7 @@ const ProjectsHome = () => {
           {/* view all projects button */}
           <div className="flex w-[90%] h-[20%] justify-center items-center">
             <Link href="/projects">
-              <button className="my-10 xl:my-0 py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
+              <button className="my-10 xl:my-0 py-5 w-[11rem] border-2 gradient-border rounded-lg text-white colorful-btn">
                 View All Projects
               </button>
             </Link>

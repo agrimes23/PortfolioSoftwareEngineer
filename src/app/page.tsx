@@ -33,7 +33,7 @@ export default function Home() {
                   href="https://github.com/agrimes23"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                  className="colorful-btn py-5 w-[11rem] border-2 gradient-border text-white text-center"
                 >
                   Github Code
                 </a>
@@ -41,13 +41,13 @@ export default function Home() {
                   href="https://www.linkedin.com/in/alex-grimes-dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                  className="colorful-btn py-5 w-[11rem] border-2 gradient-border text-white text-center"
                 >
                   LinkedIn
                 </a>
                 <Link
                   href="/projects"
-                  className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white text-center"
+                  className="colorful-btn py-5 w-[11rem] border-2 gradient-border text-white text-center"
                 >
                   Projects
                 </Link>
@@ -132,8 +132,8 @@ export default function Home() {
             {/* View All Projects Button */}
             <div className="flex w-full py-8 justify-center">
               <Link href="/experience">
-                <button className="py-3 w-[11rem] border-2 gradient-border rounded-lg text-white">
-                  View All Work Experience
+                <button className="py-5 w-[13rem] border-2 gradient-border rounded-lg text-white colorful-btn">
+                  View All Experience
                 </button>
               </Link>
             </div>
