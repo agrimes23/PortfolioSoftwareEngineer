@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row w-full justify-between py-5 px-10 shadow-lg text-accent">
+    <div className="flex flex-row w-full justify-between p-5 shadow-lg text-accent">
       {/* LOGO */}
       <div className="w-2/12">
         <Link href="/">Alex Grimes</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className="z-30 flex lg:hidden flex-col cursor-pointer sm:px-5"
+        className="z-30 flex lg:hidden flex-col cursor-pointer"
         onClick={handleToggle}
       >
         <div
@@ -46,43 +46,37 @@ const Navbar = () => {
           }`}
         ></div>
       </div>
-          {/* Overlay and Drawer */}
-          {isOpen && (
-        <>
-          {/* Overlay */}
-          <div
-            className={`fixed inset-0 bg-gray-800 opacity-50 z-20 duration-1000 ${
-              isOpen ? "opacity-50 z-20" : "opacity-0 pointer-events-none"
-            }`}
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-gray-800 transition-opacity duration-1000 ${
+          isOpen ? "opacity-70 z-20" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsOpen(false)}
+      ></div>
+
+      {/* Drawer */}
+      <div
+        className={`fixed flex flex-col justify-center items-center text-lg gap-5 z-30 top-0 left-0 bottom-0 bg-gray-700 w-[250px] sm:w-[400px] text-white transform transition-transform ease-in-out duration-700 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <Link href="/projects">
+          <span
             onClick={() => setIsOpen(false)}
-          ></div>
-
-          {/* Drawer */}
-          <div
-            className={`fixed flex flex-col justify-center items-center text-lg gap-5 z-30 top-0 left-0 bottom-0 bg-gray-700 w-[250px] sm:w-[400px] text-white transform transition-transform duration-1000 ${
-              isOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
+            className="hover:underline cursor-pointer"
           >
-            <Link href="/projects">
-              <span
-                onClick={() => setIsOpen(false)}
-                className="hover:underline cursor-pointer"
-              >
-                Projects
-              </span>
-            </Link>
-            <Link href="/experience">
-              <span
-                onClick={() => setIsOpen(false)}
-                className="hover:underline cursor-pointer"
-              >
-                Experience
-              </span>
-            </Link>
-          </div>
-        </>
-      )}
-
+            Projects
+          </span>
+        </Link>
+        <Link href="/experience">
+          <span
+            onClick={() => setIsOpen(false)}
+            className="hover:underline cursor-pointer"
+          >
+            Experience
+          </span>
+        </Link>
+      </div>
     </div>
   );
 };
