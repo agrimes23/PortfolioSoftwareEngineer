@@ -20,12 +20,12 @@ const NotFound: FC = () => {
         <div className="px-5 sm:px-0">
           <h1 className="text-4xl sm:text-6xl font-bold text-white">Page Not Found</h1>
           <p className="mt-8 text-md sm:text-xl text-white">
-            Finding the page got in the way of this cat's nap time.
+            Finding the page got in the way of this cat&apos;s nap time.
           </p>
         </div>
 
         <div className="flex flex-col items-center sm:items-start">
-          <p className='text-white text-md sm:text-lg'>Try one of these pages instead:</p>
+          <p className="text-white text-md sm:text-lg">Try one of these pages instead:</p>
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 py-5">
             <Link href="/">
               <button className="bg-secondary-light w-44 py-3 rounded-lg text-sm sm:text-lg transition-shadow duration-300 ease-in-out hover:shadow-secondary-glow">Home</button>
