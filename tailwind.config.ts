@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         primary:  {
-          light: '#b88dfc',
+          light: '#92edfc',
           DEFAULT: '#70e1f4', // ✅ UPDATED
-          dark: '#853cfa',
+          dark: '#058499',
         },
         secondary: {
           light: '#A3BFFA',
@@ -58,8 +58,7 @@ const config: Config = {
         }, 
       },
       boxShadow: {
-        'white-glow': '0 4px 15px rgba(255, 255, 255, 0.8)',
-        'neon-blue': '0 4px 15px rgba(148, 255, 239, 1)', // Adjust the RGBA value for the desired neon effect
+        'glow': '0 0 15px rgba(255, 255, 255, 0.6)',
       },
       flexGrow: {
         '2': '2', // Custom value for flex-grow

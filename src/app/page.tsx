@@ -1,11 +1,12 @@
 import Image from "next/image";
 import ProjectsHome from "./components/ProjectsHome";
 import Link from "next/link";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-5 sm:pt-24 gap-52">
-      <div className="my-5 sm:my-10">
+      <div id="hero" className="my-5 sm:my-10">
         {/* Hero Section */}
         <div className=" rounded-lg py-10 sm:py-32 lg:py-0 lg:h-[70vh] w-[90vw] xl:w-[60vw] flex flex-col items-center">
           <div className="w-[80vw] xl:w-[40vw] flex flex-col h-full justify-center gap-10 sm:gap-24">
@@ -138,6 +139,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <ScrollToTopButton />
         </div>
       </div>
     </main>
