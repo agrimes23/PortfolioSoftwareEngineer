@@ -59,6 +59,7 @@ const config: Config = {
       },
       boxShadow: {
         'glow': '0 0 15px rgba(255, 255, 255, 0.6)',
+        'secondary-glow': '0 0 15px rgba(163, 191, 250, 0.6)'
       },
       flexGrow: {
         '2': '2', // Custom value for flex-grow
