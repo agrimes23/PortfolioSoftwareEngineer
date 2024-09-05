@@ -6,26 +6,43 @@ const Experience = () => {
       <div className="flex my-10">
         <h2 className="text-[3rem] text-accent">Experience</h2>
       </div>
-      <div className="flex flex-col bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[85vw] lg:w-[60vw] pt-10 my-10 min-h-[600px]">
-        <div className="relative flex flex-col items-start h-full pb-5">
-          {/* Timeline line */}
-          <div className="relative flex items-start h-full">
+      <div>
+        <h1 className="text-accent py-3">Key</h1>
+        <div className="flex gap-8 text-accent">
+          <div className="flex gap-2 items-center">
+            <div className="h-4 w-4 bg-blue-400"></div>
+            <p>Work Experience</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <div className="h-4 w-4 bg-pink-400"></div>
+            <p>Project Experience</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <div className="h-4 w-4 bg-orange-300"></div>
+            <p>Certifications</p>
+          </div>
+        </div>
+      </div>
+
+      {/* FIXME: Might reuse as container for experience info */}
+      {/* <div className="relative flex flex-col bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[85vw] lg:w-[60vw] pt-10 my-10 min-h-[600px]"> */}
+        <div className="flex w-full">
+          <div className="absolute flex justify-start items-start bg-pink-500 w-[2px] rounded-lg ml-10 h-full">
+            
+          </div>
+            
             {/* line */}
-            <div className="absolute flex bg-gray-500 h-full w-[2px] rounded-lg ml-10">
-              {/* Dots container */}
+            {/* <div className="absolute flex bg-gray-500 h-full w-[2px] rounded-lg ml-10">
               <div className="absolute top-0 bottom-0 flex flex-col justify-between w-full">
-                {/* dot */}
                 <div className="absolute -left-2 top-[8%] rounded-full bg-purple-300 w-4 h-4"></div>
-                {/* dot */}
                 <div className="absolute -left-2 top-[28%] rounded-full bg-purple-300 w-4 h-4"></div>
-                {/* dot */}
                 <div className="absolute -left-2 top-[47%] rounded-full bg-purple-300 w-4 h-4"></div>
                 <div className="absolute -left-2 top-[69%] rounded-full bg-purple-300 w-4 h-4"></div>
                 <div className="absolute -left-2 top-[89%] rounded-full bg-purple-300 w-4 h-4"></div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex flex-col gap-12 pl-20 px-5 py-10">
+            {/* <div className="flex flex-col gap-12 pl-20 px-5 py-10">
               <div className="relative flex flex-col gap-2 text-accent">
                 <div>
                   <h4 className="text-[1.2rem] font-bold">
@@ -98,9 +115,7 @@ const Experience = () => {
                   students.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> */}
       </div>
     </div>
   );
