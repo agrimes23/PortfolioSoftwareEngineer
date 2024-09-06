@@ -1,7 +1,6 @@
 import React from 'react';
 import { calculatePosition } from '../utils/calculatePosition';
 import dayjs from 'dayjs';
-import './Timeline.css';
 import TimelineBracket from './TimelineBracket';
 
 const events = [
