@@ -1,14 +1,16 @@
+"use client"
 import React from "react";
+import Timeline from "../components/Timeline"
 
 const Experience = () => {
   return (
-    <div className="flex flex-col min-h-screen items-center">
-      <div className="flex my-10">
-        <h2 className="text-[3rem] text-accent">Experience</h2>
-      </div>
-      <div>
-        <h1 className="text-accent py-3">Key</h1>
-        <div className="flex gap-8 text-accent">
+    <div className="flex flex-col min-h-screen ">
+      {/* <div className="flex flex-col"> */}
+        {/* <div className="flex justify-center my-10">
+          <h2 className="text-[3rem] text-accent">Experience</h2>
+        </div>
+
+        <div className="flex justify-center gap-8 text-accent">
           <div className="flex gap-2 items-center">
             <div className="h-4 w-4 bg-blue-400"></div>
             <p>Work Experience</p>
@@ -22,17 +24,18 @@ const Experience = () => {
             <p>Certifications</p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Timeline />
+
+      {/* <div className="relative flex h-[80vh] bg-purple-500 w-full -z-10">
+        <div className="absolute flex justify-start items-start bg-pink-500 w-[2px] rounded-lg ml-10 h-full"></div>
+      </div> */}
 
       {/* FIXME: Might reuse as container for experience info */}
       {/* <div className="relative flex flex-col bg-neutralSecondary border-2 border-neutralSecondary-dark rounded-lg w-[85vw] lg:w-[60vw] pt-10 my-10 min-h-[600px]"> */}
-        <div className="flex w-full">
-          <div className="absolute flex justify-start items-start bg-pink-500 w-[2px] rounded-lg ml-10 h-full">
-            
-          </div>
-            
-            {/* line */}
-            {/* <div className="absolute flex bg-gray-500 h-full w-[2px] rounded-lg ml-10">
+
+      {/* line */}
+      {/* <div className="absolute flex bg-gray-500 h-full w-[2px] rounded-lg ml-10">
               <div className="absolute top-0 bottom-0 flex flex-col justify-between w-full">
                 <div className="absolute -left-2 top-[8%] rounded-full bg-purple-300 w-4 h-4"></div>
                 <div className="absolute -left-2 top-[28%] rounded-full bg-purple-300 w-4 h-4"></div>
@@ -42,7 +45,7 @@ const Experience = () => {
               </div>
             </div> */}
 
-            {/* <div className="flex flex-col gap-12 pl-20 px-5 py-10">
+      {/* <div className="flex flex-col gap-12 pl-20 px-5 py-10">
               <div className="relative flex flex-col gap-2 text-accent">
                 <div>
                   <h4 className="text-[1.2rem] font-bold">
@@ -116,7 +119,6 @@ const Experience = () => {
                 </p>
               </div>
             </div> */}
-      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-neutralSecondary h-[10vh] flex justify-center items-center gap-20 border-t-[1px] border-neutralSecondary-dark">
+    <div className="bg-neutralSecondary h-[10vh] flex justify-center items-center gap-20 border-t-[1px] border-neutralSecondary-dark z-50 ">
         <a
           href="https://github.com/agrimes23"
           target="_blank"
