@@ -13,7 +13,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({startDate, endDate, st
     <div className="absolute h-96 w-2">
       {/* Start node */}
       <div
-        className="absolute w-6 h-6 bg-blue-500 rounded-full"
+        className="absolute w-6 h-6 bg-yellow-200 rounded-full"
         style={{ top: `${startPercentage}%`, left: '-0.5rem' }}
       >
         <span className="absolute left-8 top-1/2 transform -translate-y-1/2 text-xs">
@@ -23,7 +23,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({startDate, endDate, st
 
       {/* End node */}
       <div
-        className="absolute w-6 h-6 bg-red-500 rounded-full"
+        className="absolute w-6 h-6 bg-yellow-200 rounded-full"
         style={{ top: `${endPercentage}%`, left: '-0.5rem' }}
       >
         <span className="absolute left-8 top-1/2 transform -translate-y-1/2 text-xs">
@@ -39,7 +39,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({startDate, endDate, st
 
       {/* Connecting bracket (line) */}
       <div
-        className="relative overflow-visible transform origin-left transition-transform duration-300 w-2 group hover:w-52 bg-emerald-300"
+        className="relative overflow-visible transform origin-left transition-transform duration-300 w-10 group hover"
         style={{
           top: `${startPercentage}%`,
           left: '0.5rem',
@@ -49,26 +49,22 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({startDate, endDate, st
       >
         {/* Extend the line horizontally */}
         <div
-          className="absolute bg-pink-400 transition-all duration-300 w-[1px] group-hover:w-32"
+          className="absolute bg-blue-400 transition-all duration-100 left-0 w-8 h-[1px] group-hover:w-10 group-hover:h-[3px]  group-hover:shadow-glow"
           style={{
             top: 12,
             left: 0,
-            height: '1px',
           }}
         />
         <div
-          className="absolute bg-blue-400 transition-all duration-300 w-full group-hover:w-32"
+          className="absolute bg-blue-400 transition-all duration-100 left-0 w-8 h-[1px] group-hover:w-10 group-hover:h-[3px] group-hover:shadow-glow"
           style={{
             bottom: -12,
-            left: 0,
-            height: '1px',
           }}
         />
         <div
-          className="absolute bg-pink-400 transition-all duration-300 w-[1px] group-hover:w-32"
+          className="absolute bg-blue-400 transition-all duration-100 left-[2rem] w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow"
           style={{
             top: 12,
-            left: '2rem',
             height: '100%',
           }}
         />

@@ -13,7 +13,7 @@ const Timeline: React.FC = () => {
   const maxDate = dayjs().format('YYYY-MM-DD'); // Timeline end date (current date)
 
   return (
-    <div className="relative h-[90vh] w-2 bg-gray-300 mx-auto">
+    <div className="relative h-[150vh] w-2 bg-gray-300 ml-20 my-20">
       {events.map((event) => {
         const startPercentage = calculatePosition(event.startDate, minDate, maxDate);
         const endPercentage = calculatePosition(event.endDate, minDate, maxDate);
