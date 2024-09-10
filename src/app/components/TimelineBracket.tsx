@@ -26,16 +26,27 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
       return {
         lineLength: "w-[20%]",
         boxPosition: "left-[20%]",
-        hoverLength: "",
+        horizontalBracket: "w-8 group-hover:w-10",
+        verticalBracket: "left-[2rem] group-hover:left-[2.3rem]"
       }; // Short line, closer box
     } else if (index % 3 === 1) {
-      return { lineLength: "w-[50vw]", boxPosition: "left-[50vw]" }; // Medium line, middle box
+      return {
+        lineLength: "w-[50vw]",
+        boxPosition: "left-[50vw]",
+        horizontalBracket: "w-10 group-hover:w-12",
+        verticalBracket: "left-[2.5rem] group-hover:left-[2.8rem]",
+      }; // Medium line, middle box
     } else {
-      return { lineLength: "w-[80%]", boxPosition: "left-[80%]" }; // Long line, farther box
+      return {
+        lineLength: "w-[80%]",
+        boxPosition: "left-[80%]",
+        horizontalBracket: "w-12 group-hover:w-14",
+        verticalBracket: "left-[3rem] group-hover:left-[3.3rem]",
+      }; // Long line, farther box
     }
   };
 
-  const { lineLength, boxPosition } = getLineLengthAndPosition(index);
+  const { lineLength, boxPosition, horizontalBracket, verticalBracket } = getLineLengthAndPosition(index);
 
   return (
     <div key={index} className="w-full  group hover">
@@ -96,21 +107,24 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             }}
           >
             {/* Extend the line horizontally */}
+            {/* w-8, group-hover:w-10 */}
             <div
-              className="absolute bg-blue-400 transition-all duration-100 left-0 w-8 h-[1px] group-hover:w-10 group-hover:h-[3px]  group-hover:shadow-glow"
+              className={`absolute bg-blue-400 transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px]  group-hover:shadow-glow`}
               style={{
                 top: 12,
                 left: 0,
               }}
             />
+            {/* w-8, group-hover:w-10 */}
             <div
-              className="absolute bg-blue-400 transition-all duration-100 left-0 w-8 h-[1px] group-hover:w-10 group-hover:h-[3px] group-hover:shadow-glow"
+              className={`absolute bg-blue-400 transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px] group-hover:shadow-glow`}
               style={{
                 bottom: -12,
               }}
             />
+            {/* left-[2rem], group-hover:left-[2.3rem] */}
             <div
-              className="absolute bg-blue-400 transition-all duration-100 left-[2rem] w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow"
+              className={`absolute bg-blue-400 transition-all duration-100 ${verticalBracket} w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow`}
               style={{
                 top: 12,
                 height: "100%",
@@ -119,7 +133,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             {/* Horizontal line extending from midpoint */}
             <div className="w-full">
               <div
-                className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[2rem] group-hover:left-[2.3rem] w-32 transition-all duration-100 ${lineLength}`}
+                className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] ${verticalBracket} w-32 transition-all duration-100 ${lineLength}`}
                 style={{ top: `50%` }}
               />
 
