@@ -6,6 +6,7 @@ import TimelineBracket from "./TimelineBracket";
 const events = [
   {
     eventColor: "bg-cyan-800",
+    eventType: "job",
     startDate: "2016-01-08",
     endDate: "2017-06-01",
     title: "Accountant, Internship",
@@ -14,6 +15,7 @@ const events = [
   },
   {
     eventColor: "bg-cyan-800",
+    eventType: "job",
     startDate: "2016-07-01",
     endDate: "2017-07-01",
     title: "English Teacher",
@@ -22,6 +24,7 @@ const events = [
   },
   {
     eventColor: "bg-orange-400",
+    eventType: "certificate",
     startDate: "2016-06-01",
     endDate: "2016-06-01",
     title: "TEFL Certificate",
@@ -30,6 +33,7 @@ const events = [
   },
   {
     eventColor: "bg-orange-400",
+    eventType: "certificate",
     startDate: "2019-08-20",
     endDate: "2019-08-20",
     title: "Passed N3 Level",
@@ -38,6 +42,7 @@ const events = [
   },
   {
     eventColor: "bg-cyan-800",
+    eventType: "job",
     startDate: "2017-07-20",
     endDate: "2019-07-20",
     title: "Assistant Language Teacher with JET Program",
@@ -46,6 +51,7 @@ const events = [
   },
   {
     eventColor: "bg-cyan-800",
+    eventType: "job",
     startDate: "2019-09-30",
     endDate: "2022-05-31",
     title: "Accountant",
@@ -54,6 +60,7 @@ const events = [
   },
   {
     eventColor: "bg-orange-400",
+    eventType: "certificate",
     startDate: "2022-10-18",
     endDate: "2023-01-30",
     title: "Software Engineering Fellow",
@@ -62,6 +69,7 @@ const events = [
   },
   {
     eventColor: "bg-pink-900",
+    eventType: "group project",
     startDate: "2023-09-15",
     endDate: dayjs().format("YYYY-MM-DD"),
     title: "Software Engineer",
@@ -70,6 +78,7 @@ const events = [
   },
   {
     eventColor: "bg-pink-900",
+    eventType: "group project",
     startDate: "2023-05-09",
     endDate: "2023-08-02",
     title: "Sprint Participant - Software Engineer",
@@ -78,6 +87,7 @@ const events = [
   },
   {
     eventColor: "bg-cyan-800",
+    eventType: "job",
     startDate: "2024-02-07",
     endDate: "2024-08-07",
     title: "IT Jr. Software Engineer",

@@ -3,6 +3,7 @@ import React from "react";
 interface TimelineBracketProps {
   event: {
     eventColor: string;
+    eventType: string;
     startDate: string;
     endDate: string;
     title: string;
@@ -75,6 +76,15 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
             style={{ top: `${startPercentage - 0.3}%` }} // Adjust position slightly for better alignment
           >
+            {event.eventType === "job" ? (
+              <span className="material-symbols-outlined">work</span>
+            ) : event.eventType === "certificate" ? (
+              <span className="material-symbols-outlined">
+                workspace_premium
+              </span>
+            ) : (
+              <span className="material-symbols-outlined">rocket_launch</span>
+            )}
             <h3>{event.title}</h3>
             <h3>{event.company}</h3>
             <p className="text-sm">{event.description}</p>
@@ -144,6 +154,17 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
                 className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
                 style={{ top: `45%` }}
               >
+                {event.eventType === "job" ? (
+                  <span className="material-symbols-outlined">work</span>
+                ) : event.eventType === "certificate" ? (
+                  <span className="material-symbols-outlined">
+                    workspace_premium
+                  </span>
+                ) : (
+                  <span className="material-symbols-outlined">
+                    rocket_launch
+                  </span>
+                )}
                 <h3>{event.title}</h3>
                 <h3>{event.company}</h3>
                 <p className="text-sm">{event.description}</p>
