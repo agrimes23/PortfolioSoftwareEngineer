@@ -32,21 +32,21 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
     if (index % 3 === 0) {
       return {
         lineLength: "w-[20vw]",
-        boxPosition: "left-[20vw]",
+        boxPosition: "left-[10vw] lg:left-[20vw]",
         horizontalBracket: "w-8 group-hover:w-10",
         verticalBracket: "left-[2rem] group-hover:left-[2.3rem]"
       }; // Short line, closer box
     } else if (index % 3 === 1) {
       return {
         lineLength: "w-[50vw]",
-        boxPosition: "left-[50vw]",
+        boxPosition: "left-[10vw] sm:left-[35vw] lg:left-[50vw]",
         horizontalBracket: "w-10 group-hover:w-12",
         verticalBracket: "left-[2.5rem] group-hover:left-[2.8rem]",
       };
     } else {
       return {
-        lineLength: "w-[80vw]",
-        boxPosition: "left-[80vw]",
+        lineLength: "w-[10vw] sm:w-[70vw]",
+        boxPosition: "left-[10vw] sm:left-[45vw] lg:left-[60vw]",
         horizontalBracket: "w-12 group-hover:w-14",
         verticalBracket: "left-[3rem] group-hover:left-[3.3rem]",
       };
@@ -59,7 +59,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
     <div key={index} className="w-full">
       {/* Start node */}
       <div
-        className="absolute w-6 h-6 bg-yellow-200 rounded-full"
+        className="absolute w-6 h-6 bg-yellow-200 rounded-full z-10"
         style={{ top: `${startPercentage}%`, left: "-0.5rem" }}
       >
         <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs text-white">
@@ -72,13 +72,13 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         <div className="w-full group">
           {/* Horizontal line extending to the text box */}
           <div
-            className={`absolute ${event.eventColor} h-[1px] group-hover:h-[3px] left-[0.8rem] transition-all duration-100 ${lineLength}`}
+            className={`absolute ${event.eventColor} h-[6px] group-hover:h-[9px] left-[0.8rem] transition-all duration-100 ${lineLength} group-hover:shadow-glow`}
             style={{ top: `${startPercentage + 0.3}%` }}
           />
 
           {/* Text box for one-day event */}
           <div
-            className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition} z-20`}
+            className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-110 ${boxPosition} z-20`}
             style={{ top: `${startPercentage - 0.3}%` }} // Adjust position slightly for better alignment
           >
             {event.eventType === "job" ? (
@@ -124,7 +124,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         <div className="group">
           {/* End node for multi-day events */}
           <div
-            className="absolute w-6 h-6 bg-yellow-200 rounded-full"
+            className="absolute w-6 h-6 bg-yellow-200 rounded-full z-10"
             style={{ top: `${endPercentage}%`, left: "-0.5rem" }}
           >
             <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs text-white">
@@ -150,7 +150,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             {/* Extend the line horizontally */}
 
             <div
-              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px]  group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[4px] group-hover:h-[6px]  group-hover:shadow-glow`}
               style={{
                 top: 12,
                 left: 0,
@@ -158,14 +158,14 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             />
 
             <div
-              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px] group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[4px] group-hover:h-[6px] group-hover:shadow-glow`}
               style={{
                 bottom: -12,
               }}
             />
 
             <div
-              className={`absolute ${event.eventColor} transition-all duration-100 ${verticalBracket} w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 ${verticalBracket} w-[4px] group-hover:w-[6px] group-hover:h-[4px] group-hover:left-[2.3rem] group-hover:shadow-glow`}
               style={{
                 top: 12,
                 height: "100%",
@@ -174,15 +174,13 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             {/* Horizontal line extending from midpoint */}
             <div className="w-full">
               <div
-                className={`absolute ${event.eventColor} h-[1px] group-hover:h-[3px] ${verticalBracket} w-32 transition-all duration-100 ${lineLength}`}
-                style={{ top: `50%` }}
+                className={`absolute ${event.eventColor} h-[6px] group-hover:h-[9px] ${verticalBracket} w-32 transition-all duration-100 ${lineLength} group-hover:shadow-glow ${index % 3 === 0 ? "top-[40%] lg:top-[55%]" : index % 3 === 1 ? "top-[55%]" : "top-[48%]"}`}
               />
 
               {/* Text box connected to the horizontal line */}
 
               <div
-                className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition} z-20`}
-                style={{ top: `45%` }}
+                className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-110 ${index % 3 === 0 ? "top-[20%] lg:top-[45%]" : "top-[45%]"}  ${boxPosition}`}
               >
                 {event.eventType === "job" ? (
                   <span className="material-symbols-outlined absolute right-4 cursor-default">
@@ -209,7 +207,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
                   )}
                 </button>
                 <div className="pb-6">
-                  <h3 className="text-lg">{event.title}</h3>
+                  <h3 className="text-lg pr-12 break-words">{event.title}</h3>
                   <h4 className="text-sm italic">{event.company}</h4>
                 </div>
                 {showDesc && (

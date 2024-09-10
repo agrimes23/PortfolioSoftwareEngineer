@@ -35,8 +35,8 @@ const events = [
   {
     eventColor: "bg-orange-700",
     eventType: "certificate",
-    startDate: "2016-06-01",
-    endDate: "2016-06-01",
+    startDate: "2016-06-30",
+    endDate: "2016-06-30",
     title: "TEFL Certificate",
     company: "",
     description: [
@@ -141,7 +141,7 @@ const Timeline: React.FC = () => {
 
   return (
     <>
-      <div className="relative h-[400vh] w-2 bg-gray-300 ml-20 my-20"></div>
+      <div className="relative h-[400vh] w-2 bg-gray-300 ml-20 mt-20 mb-80"></div>
       
       <div className="absolute w-[90%] max-w-screen h-[400vh] my-20 ml-20">
         {events.map((event, index) => {
