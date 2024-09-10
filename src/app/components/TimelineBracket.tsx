@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface TimelineBracketProps {
   event: {
@@ -8,12 +8,14 @@ interface TimelineBracketProps {
     endDate: string;
     title: string;
     company: string;
-    description: string;
+    description: string[];
   };
   startPercentage: number;
   endPercentage: number;
   midPercentage: number;
   index: number;
+  showDesc: boolean;
+  onToggle: () => void;
 }
 
 const TimelineBracket: React.FC<TimelineBracketProps> = ({
@@ -22,7 +24,10 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
   endPercentage,
   midPercentage,
   index,
+  showDesc,
+  onToggle,
 }) => {
+
   const getLineLengthAndPosition = (index: number) => {
     if (index % 3 === 0) {
       return {
@@ -57,7 +62,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         className="absolute w-6 h-6 bg-yellow-200 rounded-full"
         style={{ top: `${startPercentage}%`, left: "-0.5rem" }}
       >
-        <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs">
+        <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs text-white">
           {event.startDate}
         </span>
       </div>
@@ -77,17 +82,42 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             style={{ top: `${startPercentage - 0.3}%` }} // Adjust position slightly for better alignment
           >
             {event.eventType === "job" ? (
-              <span className="material-symbols-outlined">work</span>
+              <span className="material-symbols-outlined absolute right-4 cursor-default">
+                work
+              </span>
             ) : event.eventType === "certificate" ? (
-              <span className="material-symbols-outlined">
+              <span className="material-symbols-outlined absolute right-4 cursor-default">
                 workspace_premium
               </span>
             ) : (
-              <span className="material-symbols-outlined">rocket_launch</span>
+              <span className="material-symbols-outlined absolute right-4 cursor-default">
+                rocket_launch
+              </span>
             )}
-            <h3>{event.title}</h3>
-            <h3>{event.company}</h3>
-            <p className="text-sm">{event.description}</p>
+            <button className="absolute top-14 right-4" onClick={onToggle}>
+              {showDesc ? (
+                <span className="material-symbols-outlined">
+                  keyboard_arrow_up
+                </span>
+              ) : (
+                <span className="material-symbols-outlined">
+                  keyboard_arrow_down
+                </span>
+              )}
+            </button>
+            <div className="pb-6">
+              <h3>{event.title}</h3>
+              <h3>{event.company}</h3>
+            </div>
+            {showDesc && (
+              <div>
+                {event.description.map((desc, index) => (
+                  <p key={index} className="text-sm py-1">
+                    {desc}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       ) : (
@@ -97,7 +127,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             className="absolute w-6 h-6 bg-yellow-200 rounded-full"
             style={{ top: `${endPercentage}%`, left: "-0.5rem" }}
           >
-            <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs">
+            <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs text-white">
               {event.endDate}
             </span>
           </div>
@@ -155,19 +185,42 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
                 style={{ top: `45%` }}
               >
                 {event.eventType === "job" ? (
-                  <span className="material-symbols-outlined">work</span>
+                  <span className="material-symbols-outlined absolute right-4 cursor-default">
+                    work
+                  </span>
                 ) : event.eventType === "certificate" ? (
-                  <span className="material-symbols-outlined">
+                  <span className="material-symbols-outlined absolute right-4 cursor-default">
                     workspace_premium
                   </span>
                 ) : (
-                  <span className="material-symbols-outlined">
+                  <span className="material-symbols-outlined absolute right-4 cursor-default">
                     rocket_launch
                   </span>
                 )}
-                <h3>{event.title}</h3>
-                <h3>{event.company}</h3>
-                <p className="text-sm">{event.description}</p>
+                <button className="absolute top-16 right-4" onClick={onToggle}>
+                  {showDesc ? (
+                    <span className="material-symbols-outlined">
+                      keyboard_arrow_up
+                    </span>
+                  ) : (
+                    <span className="material-symbols-outlined">
+                      keyboard_arrow_down
+                    </span>
+                  )}
+                </button>
+                <div className="pb-6">
+                  <h3 className="text-lg">{event.title}</h3>
+                  <h4 className="text-sm italic">{event.company}</h4>
+                </div>
+                {showDesc && (
+                  <div>
+                    {event.description.map((desc, index) => (
+                      <p key={index} className="text-sm py-1">
+                        {desc}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
