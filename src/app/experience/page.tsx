@@ -4,7 +4,7 @@ import Timeline from "../components/Timeline"
 
 const Experience = () => {
   return (
-    <div className="flex flex-col min-h-screen ">
+    <div className="flex flex-col min-h-screen min-w-screen">
       {/* <div className="flex flex-col"> */}
         {/* <div className="flex justify-center my-10">
           <h2 className="text-[3rem] text-accent">Experience</h2>

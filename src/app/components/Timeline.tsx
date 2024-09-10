@@ -5,6 +5,27 @@ import TimelineBracket from "./TimelineBracket";
 
 const events = [
   {
+    startDate: "2016-01-08",
+    endDate: "2017-06-01",
+    title: "Accountant, Internship",
+    company: "Magnolia Health Systems",
+    description: "• Uploaded Accounts Receivable from Matrix software to Hi-Tech accounting software. • Set up training guide and taught experienced accounting staff how to perform Accounts Receivable uploads. • Helped Accounts Payable department by entering invoices, cutting checks, and filing. • Assisted Controller and Senior Accounting Manager with various account analysis and projects. • Calculated and entered monthly recurring journal entries.",
+  },
+  {
+    startDate: "2016-07-01",
+    endDate: "2017-07-01",
+    title: "English Teacher",
+    company: "VIPKID",
+    description: "• Instructed one-on-one classes to Chinese students ages 5-12. • Indicated areas of improvement and wrote unit assessments and feedback for parents. • Used data from previous classes to change the plan and learning environment to fit student's needs.",
+  },
+  {
+    startDate: "2016-06-01",
+    endDate: "2016-06-01",
+    title: "TEFL Certificate",
+    company: "",
+    description: "Training to provide English instruction in foreign classrooms. Completed 20 hours teaching to non-native speakers and observed TEFL professionals teach.",
+  },
+  {
     startDate: "2019-08-20",
     endDate: "2019-08-20",
     title: "Passed N3 Level",
@@ -61,9 +82,9 @@ const Timeline: React.FC = () => {
 
   return (
     <>
-      <div className="relative h-[500vh] w-2 bg-gray-300 ml-20 my-20"></div>
+      <div className="relative h-[400vh] w-2 bg-gray-300 ml-20 my-20"></div>
       
-      <div className="absolute w-[90%] max-w-screen h-[500vh] my-20 ml-20">
+      <div className="absolute w-[90%] max-w-screen h-[400vh] my-20 ml-20">
         {events.map((event, index) => {
           const startPercentage = calculatePosition(
             event.startDate,
