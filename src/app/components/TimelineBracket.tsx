@@ -38,7 +38,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
   const { lineLength, boxPosition } = getLineLengthAndPosition(index);
 
   return (
-    <div key={index} className="w-full ">
+    <div key={index} className="w-full  group hover">
       {/* Start node */}
       <div
         className="absolute w-6 h-6 bg-yellow-200 rounded-full"
@@ -54,7 +54,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         <div className="w-full">
           {/* Horizontal line extending to the text box */}
           <div
-            className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[0.8rem] group-hover:left-[2.3rem] transition-all duration-100 ${lineLength}`}
+            className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[0.8rem] transition-all duration-100 ${lineLength}`}
             style={{ top: `${startPercentage + 0.3}%` }}
           />
 
