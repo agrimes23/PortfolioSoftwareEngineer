@@ -5,7 +5,7 @@ import TimelineBracket from "./TimelineBracket";
 
 const events = [
   {
-    eventColor: "bg-blue-400",
+    eventColor: "bg-cyan-800",
     startDate: "2016-01-08",
     endDate: "2017-06-01",
     title: "Accountant, Internship",
@@ -13,7 +13,7 @@ const events = [
     description: "• Uploaded Accounts Receivable from Matrix software to Hi-Tech accounting software. • Set up training guide and taught experienced accounting staff how to perform Accounts Receivable uploads. • Helped Accounts Payable department by entering invoices, cutting checks, and filing. • Assisted Controller and Senior Accounting Manager with various account analysis and projects. • Calculated and entered monthly recurring journal entries.",
   },
   {
-    eventColor: "bg-blue-400",
+    eventColor: "bg-cyan-800",
     startDate: "2016-07-01",
     endDate: "2017-07-01",
     title: "English Teacher",
@@ -37,7 +37,7 @@ const events = [
     description: "",
   },
   {
-    eventColor: "bg-blue-400",
+    eventColor: "bg-cyan-800",
     startDate: "2017-07-20",
     endDate: "2019-07-20",
     title: "Assistant Language Teacher with JET Program",
@@ -45,7 +45,7 @@ const events = [
     description: "• Managed financial initiatives across North American entities by establishing new and recurring loans with Japanese banks, streamlined processes by introducing a trip request system through Power Automate that cut down approval times by over 66%, and led the transition to a paperless expense reporting system, enhancing operational efficiency.",
   },
   {
-    eventColor: "bg-blue-400",
+    eventColor: "bg-cyan-800",
     startDate: "2019-09-30",
     endDate: "2022-05-31",
     title: "Accountant",
@@ -77,7 +77,7 @@ const events = [
     description: "• Led a cross-functional team as Scrum Master, building a privacy-centric mobile application for encrypted COVID-19 test reporting • Created a robust RESTful API using TypeScript, Express.js, and SQL with Sequelize for optimal performance and reliability, and authored a comprehensive suite of Jest unit tests to ensure high code quality and coverage standards before production deployment • Developed the frontend with React Native, ensuring cross-device compatibility and user experience excellence",
   },
   {
-    eventColor: "bg-blue-400",
+    eventColor: "bg-cyan-800",
     startDate: "2024-02-07",
     endDate: "2024-08-07",
     title: "IT Jr. Software Engineer",
