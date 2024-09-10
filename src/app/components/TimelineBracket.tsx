@@ -2,6 +2,7 @@ import React from "react";
 
 interface TimelineBracketProps {
   event: {
+    eventColor: string;
     startDate: string;
     endDate: string;
     title: string;
@@ -35,14 +36,14 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         boxPosition: "left-[50vw]",
         horizontalBracket: "w-10 group-hover:w-12",
         verticalBracket: "left-[2.5rem] group-hover:left-[2.8rem]",
-      }; // Medium line, middle box
+      };
     } else {
       return {
         lineLength: "w-[80%]",
         boxPosition: "left-[80%]",
         horizontalBracket: "w-12 group-hover:w-14",
         verticalBracket: "left-[3rem] group-hover:left-[3.3rem]",
-      }; // Long line, farther box
+      };
     }
   };
 
@@ -65,13 +66,13 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         <div className="w-full">
           {/* Horizontal line extending to the text box */}
           <div
-            className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[0.8rem] transition-all duration-100 ${lineLength}`}
+            className={`absolute ${event.eventColor} h-[1px] group-hover:h-[3px] left-[0.8rem] transition-all duration-100 ${lineLength}`}
             style={{ top: `${startPercentage + 0.3}%` }}
           />
 
           {/* Text box for one-day event */}
           <div
-            className={`absolute bg-pink-900 text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
+            className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
             style={{ top: `${startPercentage - 0.3}%` }} // Adjust position slightly for better alignment
           >
             <h3>{event.title}</h3>
@@ -107,24 +108,24 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             }}
           >
             {/* Extend the line horizontally */}
-            {/* w-8, group-hover:w-10 */}
+
             <div
-              className={`absolute bg-blue-400 transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px]  group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px]  group-hover:shadow-glow`}
               style={{
                 top: 12,
                 left: 0,
               }}
             />
-            {/* w-8, group-hover:w-10 */}
+
             <div
-              className={`absolute bg-blue-400 transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px] group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 left-0 ${horizontalBracket} h-[1px] group-hover:h-[3px] group-hover:shadow-glow`}
               style={{
                 bottom: -12,
               }}
             />
-            {/* left-[2rem], group-hover:left-[2.3rem] */}
+
             <div
-              className={`absolute bg-blue-400 transition-all duration-100 ${verticalBracket} w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow`}
+              className={`absolute ${event.eventColor} transition-all duration-100 ${verticalBracket} w-[1px] group-hover:w-[3px] group-hover:h-[2px] group-hover:left-[2.3rem] group-hover:shadow-glow`}
               style={{
                 top: 12,
                 height: "100%",
@@ -133,14 +134,14 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
             {/* Horizontal line extending from midpoint */}
             <div className="w-full">
               <div
-                className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] ${verticalBracket} w-32 transition-all duration-100 ${lineLength}`}
+                className={`absolute ${event.eventColor} h-[1px] group-hover:h-[3px] ${verticalBracket} w-32 transition-all duration-100 ${lineLength}`}
                 style={{ top: `50%` }}
               />
 
               {/* Text box connected to the horizontal line */}
 
               <div
-                className={`absolute bg-pink-900 text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
+                className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
                 style={{ top: `45%` }}
               >
                 <h3>{event.title}</h3>
