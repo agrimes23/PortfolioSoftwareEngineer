@@ -8,7 +8,7 @@ const events = [
     eventColor: "bg-cyan-800",
     eventType: "job",
     startDate: "2016-01-08",
-    endDate: "2017-06-01",
+    endDate: "2016-06-01",
     title: "Accountant, Internship",
     company: "Magnolia Health Systems",
     description: [

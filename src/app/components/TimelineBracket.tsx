@@ -31,8 +31,8 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
   const getLineLengthAndPosition = (index: number) => {
     if (index % 3 === 0) {
       return {
-        lineLength: "w-[20%]",
-        boxPosition: "left-[20%]",
+        lineLength: "w-[20vw]",
+        boxPosition: "left-[20vw]",
         horizontalBracket: "w-8 group-hover:w-10",
         verticalBracket: "left-[2rem] group-hover:left-[2.3rem]"
       }; // Short line, closer box
@@ -45,8 +45,8 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
       };
     } else {
       return {
-        lineLength: "w-[80%]",
-        boxPosition: "left-[80%]",
+        lineLength: "w-[80vw]",
+        boxPosition: "left-[80vw]",
         horizontalBracket: "w-12 group-hover:w-14",
         verticalBracket: "left-[3rem] group-hover:left-[3.3rem]",
       };
@@ -56,7 +56,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
   const { lineLength, boxPosition, horizontalBracket, verticalBracket } = getLineLengthAndPosition(index);
 
   return (
-    <div key={index} className="w-full  group hover">
+    <div key={index} className="w-full">
       {/* Start node */}
       <div
         className="absolute w-6 h-6 bg-yellow-200 rounded-full"
@@ -69,7 +69,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
 
       {/* Only render the end node if it's a multi-day event */}
       {event.startDate === event.endDate ? (
-        <div className="w-full">
+        <div className="w-full group">
           {/* Horizontal line extending to the text box */}
           <div
             className={`absolute ${event.eventColor} h-[1px] group-hover:h-[3px] left-[0.8rem] transition-all duration-100 ${lineLength}`}
@@ -78,7 +78,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
 
           {/* Text box for one-day event */}
           <div
-            className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
+            className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition} z-20`}
             style={{ top: `${startPercentage - 0.3}%` }} // Adjust position slightly for better alignment
           >
             {event.eventType === "job" ? (
@@ -121,7 +121,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
           </div>
         </div>
       ) : (
-        <>
+        <div className="group">
           {/* End node for multi-day events */}
           <div
             className="absolute w-6 h-6 bg-yellow-200 rounded-full"
@@ -139,7 +139,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
 
           {/* Connecting bracket (line) */}
           <div
-            className="absolute overflow-visible transform origin-left transition-transform duration-300 w-full max-w-screen group hover"
+            className="absolute overflow-visible transform origin-left transition-transform duration-300 "
             style={{
               top: `${endPercentage}%`,
               left: "0.5rem",
@@ -181,7 +181,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
               {/* Text box connected to the horizontal line */}
 
               <div
-                className={`absolute ${event.eventColor} text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
+                className={`absolute ${event.eventColor} text-white p-4 rounded-md w-80 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition} z-20`}
                 style={{ top: `45%` }}
               >
                 {event.eventType === "job" ? (
@@ -224,7 +224,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
