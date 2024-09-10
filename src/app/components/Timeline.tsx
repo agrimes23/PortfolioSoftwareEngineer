@@ -100,6 +100,7 @@ const Timeline: React.FC = () => {
 
           return (
             <TimelineBracket
+              key={index}
               event={event}
               startPercentage={startPercentage}
               endPercentage={endPercentage}
