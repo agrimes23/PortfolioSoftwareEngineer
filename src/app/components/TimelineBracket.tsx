@@ -1,8 +1,13 @@
 import React from "react";
 
 interface TimelineBracketProps {
-  startDate: string;
-  endDate: string;
+  event: {
+    startDate: string;
+    endDate: string;
+    title: string;
+    company: string;
+    description: string
+  };
   startPercentage: number;
   endPercentage: number;
   midPercentage: number;
@@ -10,20 +15,19 @@ interface TimelineBracketProps {
 }
 
 const TimelineBracket: React.FC<TimelineBracketProps> = ({
-  startDate,
-  endDate,
+  event,
   startPercentage,
   endPercentage,
   midPercentage,
   index,
 }) => {
   const getLineLengthAndPosition = (index: number) => {
-    if (index % 3 === 0) {
-      return { lineLength: "w-32", boxPosition: "left-40", hoverLength: "" }; // Short line, closer box
+    if ((index) % 3 === 0) {
+      return { lineLength: "w-[20%]", boxPosition: "left-[20%]", hoverLength: "" }; // Short line, closer box
     } else if (index % 3 === 1) {
-      return { lineLength: "w-48", boxPosition: "left-56" }; // Medium line, middle box
+      return { lineLength: "w-[50vw]", boxPosition: "left-[50vw]" }; // Medium line, middle box
     } else {
-      return { lineLength: "w-64", boxPosition: "left-72" }; // Long line, farther box
+      return { lineLength: "w-[80%]", boxPosition: "left-[80%]" }; // Long line, farther box
     }
   };
 
@@ -37,7 +41,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         style={{ top: `${startPercentage}%`, left: "-0.5rem" }}
       >
         <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs">
-          {startDate}
+          {event.startDate}
         </span>
       </div>
 
@@ -47,7 +51,7 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         style={{ top: `${endPercentage}%`, left: "-0.5rem" }}
       >
         <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-xs">
-          {endDate}
+          {event.endDate}
         </span>
       </div>
 
@@ -61,9 +65,9 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
       <div
         className="absolute overflow-visible transform origin-left transition-transform duration-300 w-full max-w-screen group hover"
         style={{
-          top: `${startPercentage}%`,
+          top: `${endPercentage}%`,
           left: "0.5rem",
-          height: `${endPercentage - startPercentage}%`,
+          height: `${startPercentage - endPercentage}%`,
           transform: "translateX(0%)",
         }}
       >
@@ -91,17 +95,19 @@ const TimelineBracket: React.FC<TimelineBracketProps> = ({
         {/* Horizontal line extending from midpoint */}
         <div className="w-full">
           <div
-            className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[2rem] group-hover:left-[2.3rem] w-32 group-hover:w-36 transition-all duration-100 ${lineLength}`}
+            className={`absolute bg-blue-400 h-[1px] group-hover:h-[3px] left-[2rem] group-hover:left-[2.3rem] w-32 transition-all duration-100 ${lineLength}`}
             style={{ top: `50%` }}
           />
 
           {/* Text box connected to the horizontal line */}
 
           <div
-            className={`absolute bg-pink-900 text-white p-4 rounded-md shadow-lg transition-transform duration-100 group-hover:w-28 group-hover:h-24 ${boxPosition}`}
-            style={{ top: `50%` }}
+            className={`absolute bg-pink-900 text-white p-4 rounded-md w-96 shadow-lg transition-transform duration-100 group-hover:scale-125 ${boxPosition}`}
+            style={{ top: `45%`}}
           >
-            <p className="text-sm">Event description goes here</p>
+            <h3>{event.title}</h3>
+            <h3>{event.company}</h3>
+            <p className="text-sm">{event.description}</p>
           </div>
         </div>
       </div>
