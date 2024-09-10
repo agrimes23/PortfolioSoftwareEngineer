@@ -91,11 +91,10 @@ const Timeline: React.FC = () => {
             minDate,
             maxDate
           );
-          const endPercentage = calculatePosition(
-            event.endDate,
-            minDate,
-            maxDate
-          );
+          // If startDate and endDate are the same, treat it as a one-day event
+          const endPercentage = event.startDate === event.endDate
+            ? startPercentage
+            : calculatePosition(event.endDate, minDate, maxDate);
 
           const midPercentage = (startPercentage + endPercentage) / 2;
 
